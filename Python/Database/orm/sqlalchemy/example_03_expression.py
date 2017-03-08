@@ -15,7 +15,7 @@ users = Table(
 
 if users.exists():
     users.drop()
-users.create()
+users.create() # or meta.create_all(eng) for multiple table
 
 def execute(s):
     print '-' * 20
