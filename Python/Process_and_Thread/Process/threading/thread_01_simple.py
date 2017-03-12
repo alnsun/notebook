@@ -8,6 +8,6 @@ def worker():
 
 threads = []
 for i in range(5):
-    t = threading.Thread(target=worker)
+    t = threading.Thread(target=worker) # Thread object
     threads.append(t)
-    t.start()
+    t.start() # start thread instance
