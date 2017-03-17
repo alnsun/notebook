@@ -24,3 +24,7 @@ obj = queue.get()
 obj.do_something()
 obj.close()
 obj.join_thread()
+
+condition = multiprocessing.Condition()
+cond.notifiy_all()
+cond.wait()

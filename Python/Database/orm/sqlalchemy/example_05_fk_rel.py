@@ -38,3 +38,10 @@ user.addresses = [Address(email_address='a@123.com', user_id=user.id),
 
 session.add(user)
 session.commit()
+
+for u, a in session.query(User, Address).filter(User.id==Address.user_id).filter(Address.email_address=='a@123.com').all():
+    print 'User ID: {}'.format(u.id)
+    print 'Email Address: {}'.format(a.email_address)
+
+session.query(Address).join(User).filter(Address.id.in_([2])).all()[0].email_address
+session.query(User).join(Address).filter(Address.email_address=='a@123.com').one().name
